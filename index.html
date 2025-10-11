@@ -1,0 +1,1342 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uday Crackers - Light up your celebrations!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Roboto:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Elegant, sophisticated color palette */
+            --primary-navy: #1a2332;
+            --primary-charcoal: #2c3e50;
+            --accent-gold: #d4af37;
+            --accent-amber: #f39c12;
+            --text-white: #ffffff;
+            --text-light-gray: #e8e9ea;
+            --text-medium-gray: #95a5a6;
+            --surface-dark: #34495e;
+            --surface-darker: #2c3e50;
+            --border-subtle: rgba(212, 175, 55, 0.2);
+            --shadow-elegant: rgba(0, 0, 0, 0.3);
+            --hover-overlay: rgba(212, 175, 55, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Roboto', 'Poppins', sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            color: var(--text-white);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Enhanced attractive background with multiple layers */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-image: 
+                radial-gradient(2px 2px at 25px 40px, rgba(255, 255, 255, 0.9), transparent),
+                radial-gradient(1px 1px at 80px 30px, rgba(255, 215, 0, 0.9), transparent),
+                radial-gradient(1px 1px at 150px 90px, rgba(255, 193, 7, 0.8), transparent),
+                radial-gradient(2px 2px at 200px 60px, rgba(255, 255, 255, 0.7), transparent),
+                radial-gradient(1px 1px at 300px 120px, rgba(255, 215, 0, 0.8), transparent),
+                radial-gradient(1px 1px at 50px 200px, rgba(255, 255, 255, 0.8), transparent),
+                radial-gradient(1px 1px at 250px 180px, rgba(255, 215, 0, 0.9), transparent);
+            background-size: 400px 300px, 350px 250px, 300px 400px, 450px 350px, 280px 220px, 380px 280px, 320px 240px;
+            animation: enhanced-twinkle 6s ease-in-out infinite;
+        }
+
+        @keyframes enhanced-twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            25% { opacity: 0.7; transform: scale(1.02); }
+            50% { opacity: 0.4; transform: scale(0.98); }
+            75% { opacity: 0.8; transform: scale(1.01); }
+        }
+
+        /* Floating golden particles - Enhanced for black background */
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.9) 0%, rgba(212, 175, 55, 0.6) 50%, transparent 100%);
+            border-radius: 50%;
+            animation: float 15s linear infinite;
+            box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-delay: 0s; animation-duration: 20s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 20%; animation-delay: 2s; animation-duration: 18s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 30%; animation-delay: 4s; animation-duration: 22s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 40%; animation-delay: 6s; animation-duration: 16s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 50%; animation-delay: 8s; animation-duration: 19s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-delay: 10s; animation-duration: 17s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 70%; animation-delay: 12s; animation-duration: 21s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-delay: 14s; animation-duration: 15s; }
+        .particle:nth-child(9) { width: 4px; height: 4px; left: 90%; animation-delay: 16s; animation-duration: 20s; }
+        .particle:nth-child(10) { width: 6px; height: 6px; left: 15%; animation-delay: 18s; animation-duration: 23s; }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Crackers and Fireworks Animations */
+        .crackers-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            pointer-events: none;
+        }
+
+        .firecracker {
+            position: absolute;
+            width: 4px;
+            height: 12px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+            animation: firecracker-float 8s linear infinite;
+        }
+
+        .rocket {
+            position: absolute;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to top, #FF6B35, #FFD700);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: rocket-launch 12s linear infinite;
+        }
+
+        .sparkler {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: radial-gradient(circle, #FFF, #FFD700);
+            border-radius: 50%;
+            box-shadow: 0 0 8px #FFD700;
+            animation: sparkler-twinkle 3s ease-in-out infinite;
+        }
+
+        .firework-burst {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #FF1493, #FFD700);
+            border-radius: 50%;
+            animation: firework-burst 6s ease-out infinite;
+        }
+
+        .fountain-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 50%;
+            animation: fountain-spray 4s ease-out infinite;
+        }
+
+        @keyframes firecracker-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes rocket-launch {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+                transform: translateY(20vh) translateX(50px) scale(1.2);
+            }
+            100% {
+                transform: translateY(-30vh) translateX(100px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkler-twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.5);
+                box-shadow: 0 0 4px #FFD700;
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+                box-shadow: 0 0 12px #FFD700, 0 0 20px #FFA500;
+            }
+        }
+
+        @keyframes firework-burst {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            20% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+            80% {
+                opacity: 0.8;
+                transform: scale(3) rotate(360deg);
+                box-shadow: 0 0 20px #FF1493;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(4) rotate(540deg);
+            }
+        }
+
+        @keyframes fountain-spray {
+            0% {
+                transform: translateY(0) translateX(0) scale(0);
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+                transform: translateY(-50px) translateX(20px) scale(1);
+            }
+            70% {
+                opacity: 0.8;
+                transform: translateY(-80px) translateX(40px) scale(0.8);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) translateX(60px) scale(0.3);
+            }
+        }
+
+        /* Subtle light waves - Enhanced for black background */
+        .light-waves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 193, 7, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 60%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            animation: wave-motion 30s ease-in-out infinite;
+        }
+
+        @keyframes wave-motion {
+            0%, 100% { 
+                background: 
+                    radial-gradient(ellipse at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 20%, rgba(255, 193, 7, 0.12) 0%, transparent 50%),
+                    radial-gradient(ellipse at 60% 60%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            }
+            33% { 
+                background: 
+                    radial-gradient(ellipse at 80% 30%, rgba(255, 215, 0, 0.18) 0%, transparent 50%),
+                    radial-gradient(ellipse at 30% 80%, rgba(255, 193, 7, 0.15) 0%, transparent 50%),
+                    radial-gradient(ellipse at 70% 40%, rgba(255, 215, 0, 0.12) 0%, transparent 50%);
+            }
+            66% { 
+                background: 
+                    radial-gradient(ellipse at 40% 20%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+                    radial-gradient(ellipse at 70% 70%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+                    radial-gradient(ellipse at 30% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%);
+            }
+        }
+
+        /* Removed lightning and firework animations for elegance */
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--text-light-gray);
+            margin-top: -5px;
+            font-weight: 300;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            background: var(--hover-overlay);
+            border: 1px solid var(--accent-gold);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-white);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light-gray);
+            font-weight: 300;
+        }
+
+        /* Section Headings */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-white);
+            font-weight: 600;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--accent-gold);
+            border-radius: 1px;
+        }
+
+        /* 4-Card Layout Styling */
+        .family-packs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Center the last 2 products in the third row */
+        .products-grid .product-card:nth-child(9),
+        .products-grid .product-card:nth-child(10) {
+            grid-column: span 2;
+            margin: 0 auto;
+            max-width: calc((100% - 1.5rem) / 2);
+        }
+
+        .product-card, .family-pack-card {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 600px; /* Significantly increased height for full portrait dominant images */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .family-pack-card {
+            background: rgba(20, 20, 20, 0.95);
+            border: 2px solid var(--accent-gold);
+        }
+
+
+
+        .product-card:hover, .family-pack-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: var(--hover-overlay);
+        }
+
+        .family-pack-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        /* Card Image Styling - Full Portrait Dominant Layout */
+        .card-image {
+            width: 100%;
+            height: 400px; /* Significantly increased height for full portrait dominance */
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintains full portrait aspect ratio */
+            object-position: center top; /* Centers portrait images with top priority */
+            transition: all 0.3s ease;
+            filter: brightness(0.9) contrast(1.1);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .product-card:hover .card-image img,
+        .family-pack-card:hover .card-image img {
+            transform: scale(1.05);
+            filter: brightness(1.05) contrast(1.1) saturate(1.1);
+        }
+
+        /* Card Content - Compact layout for full portrait images */
+        .card-content {
+            padding: 1rem 1.2rem; /* Reduced padding for compact text area */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .product-card h3, .family-pack-card h3 {
+            font-size: 1.3rem; /* Slightly smaller for compact layout */
+            margin-bottom: 0.5rem; /* Reduced margin */
+            color: var(--text-white);
+            font-weight: 600;
+            min-height: 2.5rem; /* Reduced height for compact design */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        .family-pack-card h3 {
+            color: var(--accent-gold);
+            font-size: 1.4rem; /* Slightly smaller for compact layout */
+            font-weight: 700;
+        }
+
+        .product-card p, .family-pack-card p {
+            color: #ddd;
+            margin-bottom: 0.6rem; /* Reduced margin for compact layout */
+            font-size: 0.9rem; /* Slightly smaller text */
+            line-height: 1.3;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .price {
+            font-size: 1.6rem; /* Slightly smaller for compact layout */
+            font-weight: 700;
+            color: var(--accent-amber);
+            margin-bottom: 0.8rem; /* Reduced margin */
+        }
+
+        .family-pack-price {
+            font-size: 2rem; /* Slightly smaller for compact layout */
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 0.8rem; /* Reduced margin */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-shadow: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: #c82333;
+        }
+
+        .btn-whatsapp {
+            background: #dc3545;
+            color: white;
+            font-size: 0.9rem;
+            padding: 12px 28px;
+            white-space: nowrap;
+        }
+
+        .btn-whatsapp:hover {
+            background: #c82333;
+            box-shadow: 0 6px 20px rgba(220, 53, 69, 0.3);
+        }
+
+        /* Footer Section */
+        .footer {
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 2px solid var(--accent-gold);
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            font-size: 1.1rem;
+            color: var(--text-light-gray);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .footer-info {
+            background: rgba(30, 30, 30, 0.8);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(15px);
+        }
+
+        .footer-info p {
+            color: #ddd;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-cta {
+            margin-top: 2rem;
+        }
+
+        .footer-cta .cta-text {
+            font-size: 1.3rem;
+            color: var(--accent-amber);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 1200px) {
+            .products-grid, .family-packs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .products-grid .product-card:nth-child(9),
+            .products-grid .product-card:nth-child(10) {
+                grid-column: span 1;
+                margin: 0;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .nav {
+                gap: 0.8rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav a {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .products-grid, .family-packs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .products-grid .product-card:nth-child(9),
+            .products-grid .product-card:nth-child(10) {
+                grid-column: span 1;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .product-card, .family-pack-card {
+                height: 550px; /* Increased mobile height for full portrait dominance */
+            }
+
+            .card-image {
+                height: 350px; /* Significantly increased mobile image height for full portrait */
+            }
+
+            .card-content {
+                padding: 0.8rem 1rem; /* More compact mobile padding */
+            }
+
+            .footer-content {
+                padding: 0 1rem;
+            }
+
+            .footer-title {
+                font-size: 1.8rem;
+            }
+
+            .footer-tagline {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 8px 18px;
+                font-size: 0.8rem;
+            }
+
+            .btn-whatsapp {
+                padding: 10px 22px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 2.5rem 0;
+            }
+
+            .products-grid, .family-packs-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .products-grid .product-card:nth-child(9),
+            .products-grid .product-card:nth-child(10) {
+                grid-column: span 1;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .product-card, .family-pack-card {
+                height: 500px; /* Increased small mobile height for full portrait dominance */
+            }
+
+            .card-image {
+                height: 300px; /* Significantly increased small mobile height for full portrait */
+            }
+
+            .product-card h3, .family-pack-card h3 {
+                font-size: 1.1rem; /* Smaller for compact mobile layout */
+                min-height: 2.2rem; /* Reduced for compact design */
+            }
+
+            .price {
+                font-size: 1.4rem; /* Smaller for compact mobile layout */
+            }
+
+            .family-pack-price {
+                font-size: 1.7rem; /* Smaller for compact mobile layout */
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<style>
+            @keyframes ripple {
+                to { transform: scale(4); opacity: 0; }
+            }
+        </style><style>
+            @keyframes sparkle {
+                0% { opacity: 0; transform: scale(0) rotate(0deg); }
+                50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                100% { opacity: 0; transform: scale(0) rotate(360deg); }
+            }
+        </style></head>
+<body style="opacity: 1; transition: opacity 0.8s;">
+    <div class="crackers-bg" id="crackers-container" style="transform: translateY(18.4667px);"><div class="rocket" style="left: 85.5588%; animation-delay: 0.0881916s; animation-duration: 11.8533s;"></div><div class="firecracker" style="left: 89.8404%; animation-delay: 0.484232s; animation-duration: 6.76756s;"></div><div class="firecracker" style="left: 29.9367%; animation-delay: 1.82598s; animation-duration: 6.67969s;"></div><div class="rocket" style="left: 80.7347%; animation-delay: 1.78091s; animation-duration: 10.8982s;"></div><div class="firecracker" style="left: 42.7151%; animation-delay: 1.71567s; animation-duration: 7.12647s;"></div><div class="sparkler" style="left: 18.7543%; top: 12.7946%; animation-delay: 1.52117s; animation-duration: 2.1824s;"></div><div class="sparkler" style="left: 52.6627%; top: 43.5804%; animation-delay: 0.636181s; animation-duration: 3.43657s;"></div><div class="sparkler" style="left: 76.9055%; top: 70.972%; animation-delay: 0.742436s; animation-duration: 2.58223s;"></div><div class="fountain-particle" style="left: 20.3541%; bottom: 0px; animation-delay: 0s; animation-duration: 4.48466s;"></div><div class="fountain-particle" style="left: 57.4387%; bottom: 0px; animation-delay: 0.2s; animation-duration: 4.14175s;"></div><div class="fountain-particle" style="left: 8.09738%; bottom: 0px; animation-delay: 0.4s; animation-duration: 4.24733s;"></div><div class="fountain-particle" style="left: 62.2819%; bottom: 0px; animation-delay: 0.6s; animation-duration: 3.80581s;"></div><div class="fountain-particle" style="left: 22.7893%; bottom: 0px; animation-delay: 0.8s; animation-duration: 3.34928s;"></div><div class="firework-burst" style="left: 78.8688%; top: 71.9537%; animation-delay: 0.57811s;"></div><div class="rocket" style="left: 3.0312%; animation-delay: 0.00833502s; animation-duration: 11.9817s;"></div></div>
+    <div class="stars" style="transform: translateY(55.4px);"></div>
+    <div class="light-waves" style="transform: translateY(27.7px);"></div>
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo" style="text-shadow: rgba(212, 175, 55, 0.5) 0px 0px 7.09498px;">Uday Crackers</div>
+                    <div class="tagline">Light up your celebrations with Uday Crackers!</div>
+                </div>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#family-packs">Family Packs</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="fade-in visible">🎆 Welcome to Uday Crackers 🎇</h1>
+            <p class="fade-in visible">Experience the magic of celebrations with our premium fireworks collection!</p>
+        </div>
+    </section>
+
+    <!-- Family Packs Section - MOVED TO TOP -->
+    <section id="family-packs" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in visible">🎁 Special Family Packs 🎁</h2>
+            <div class="family-packs-grid">
+                <div class="family-pack-card fade-in visible">
+                    <div class="card-image">
+                        <img src="C:\Users\akhil\Downloads\uday-crackers-full-portrait (1)\images\1.png" alt="Mini Celebration Pack" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>🎉 Mini Celebration Pack</h3>
+                        <p>Perfect starter pack for small celebrations</p>
+                        <div class="family-pack-price">₹999</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn btn-whatsapp">Order Now on WhatsApp 🚀</a>
+                    </div>
+                </div>
+                <div class="family-pack-card fade-in visible">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542306208-dd7789127168?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Classic Pack" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>💫 Classic Pack</h3>
+                        <p>Traditional mix of popular crackers</p>
+                        <div class="family-pack-price">₹1999</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn btn-whatsapp">Order Now on WhatsApp 🚀</a>
+                    </div>
+                </div>
+                <div class="family-pack-card fade-in visible">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1477948879622-5f16e220fa42?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Premium Pack" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>🌟 Premium Pack</h3>
+                        <p>Premium selection for grand celebrations</p>
+                        <div class="family-pack-price">₹2999</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn btn-whatsapp">Order Now on WhatsApp 🚀</a>
+                    </div>
+                </div>
+                <div class="family-pack-card fade-in visible">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Grand Celebration Pack" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>🔥 Grand Celebration Pack</h3>
+                        <p>Ultimate pack for the biggest celebrations</p>
+                        <div class="family-pack-price">₹4999</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn btn-whatsapp">Order Now on WhatsApp 🚀</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">🌟 Our Premium Products 🌟</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Sky Blaster Shots" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Sky Blaster Shots</h3>
+                        <p>Spectacular aerial shots that light up the sky</p>
+                        <div class="price">₹299</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Glitter Bomb Fountain" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Glitter Bomb Fountain</h3>
+                        <p>Beautiful glittering fountain display</p>
+                        <div class="price">₹199</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1477948879622-5f16e220fa42?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Thunder Spark Wheel" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Thunder Spark Wheel</h3>
+                        <p>Rotating wheel with thunder sound effects</p>
+                        <div class="price">₹149</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542306208-dd7789127168?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Neon Rockets" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Neon Rockets</h3>
+                        <p>Colorful rockets reaching new heights</p>
+                        <div class="price">₹399</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578854363794-bd5e3ad631a2?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Color Burst Candles" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Color Burst Candles</h3>
+                        <p>Multi-colored candle crackers</p>
+                        <div class="price">₹89</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Silver Star Shower" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Silver Star Shower</h3>
+                        <p>Shimmering silver star effects</p>
+                        <div class="price">₹179</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578854363794-bd5e3ad631a2?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Rainbow Sparklers" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Rainbow Sparklers</h3>
+                        <p>Long-lasting rainbow colored sparklers</p>
+                        <div class="price">₹99</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1477948879622-5f16e220fa42?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Mega Sound Bomb" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Mega Sound Bomb</h3>
+                        <p>Powerful sound crackers for big celebrations</p>
+                        <div class="price">₹249</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1542306208-dd7789127168?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Twinkle Flower Pots" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Twinkle Flower Pots</h3>
+                        <p>Ground flower pot crackers with twinkle effects</p>
+                        <div class="price">₹129</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&amp;h=200&amp;fit=crop&amp;crop=center" alt="Celebration Chain Crackers" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Celebration Chain Crackers</h3>
+                        <p>Chain of crackers for continuous celebration</p>
+                        <div class="price">₹349</div>
+                        <a href="https://wa.me/916303868813" target="_blank" class="btn">Order on WhatsApp 📱</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">🏪 Uday Crackers</h3>
+                <p class="footer-tagline">Light up your celebrations with Uday Crackers!</p>
+                <div class="footer-info">
+                    <p><strong>📍 Location:</strong> Stall no. 909, AU Grounds, Maddilapalem</p>
+                    <p><strong>📱 Phone:</strong> +91 63038 68813</p>
+                </div>
+                <div class="footer-cta">
+                    <p class="cta-text">🎆 To order your favorite crackers, click below!</p>
+                    <a href="https://wa.me/916303868813" target="_blank" class="btn btn-whatsapp">👉 Order on WhatsApp 🎯</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic Crackers and Fireworks Animations
+        function createFirecracker() {
+            const firecracker = document.createElement('div');
+            firecracker.className = 'firecracker';
+            firecracker.style.left = Math.random() * 100 + '%';
+            firecracker.style.animationDelay = Math.random() * 3 + 's';
+            firecracker.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.getElementById('crackers-container').appendChild(firecracker);
+            
+            setTimeout(() => {
+                if (firecracker.parentNode) {
+                    firecracker.parentNode.removeChild(firecracker);
+                }
+            }, 10000);
+        }
+
+        function createRocket() {
+            const rocket = document.createElement('div');
+            rocket.className = 'rocket';
+            rocket.style.left = Math.random() * 90 + '%';
+            rocket.style.animationDelay = Math.random() * 2 + 's';
+            rocket.style.animationDuration = (Math.random() * 3 + 10) + 's';
+            document.getElementById('crackers-container').appendChild(rocket);
+            
+            setTimeout(() => {
+                if (rocket.parentNode) {
+                    rocket.parentNode.removeChild(rocket);
+                }
+            }, 15000);
+        }
+
+        function createSparklers() {
+            for (let i = 0; i < 3; i++) {
+                const sparkler = document.createElement('div');
+                sparkler.className = 'sparkler';
+                sparkler.style.left = Math.random() * 100 + '%';
+                sparkler.style.top = Math.random() * 100 + '%';
+                sparkler.style.animationDelay = Math.random() * 2 + 's';
+                sparkler.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                document.getElementById('crackers-container').appendChild(sparkler);
+                
+                setTimeout(() => {
+                    if (sparkler.parentNode) {
+                        sparkler.parentNode.removeChild(sparkler);
+                    }
+                }, 5000);
+            }
+        }
+
+        function createFireworkBurst() {
+            const burst = document.createElement('div');
+            burst.className = 'firework-burst';
+            burst.style.left = Math.random() * 80 + 10 + '%';
+            burst.style.top = Math.random() * 60 + 20 + '%';
+            burst.style.animationDelay = Math.random() * 1 + 's';
+            document.getElementById('crackers-container').appendChild(burst);
+            
+            setTimeout(() => {
+                if (burst.parentNode) {
+                    burst.parentNode.removeChild(burst);
+                }
+            }, 8000);
+        }
+
+        function createFountainSpray() {
+            for (let i = 0; i < 5; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fountain-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = '0px';
+                particle.style.animationDelay = (i * 0.2) + 's';
+                particle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                document.getElementById('crackers-container').appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 6000);
+            }
+        }
+
+        // Create crackers animations at intervals
+        setInterval(createFirecracker, 3000);
+        setInterval(createRocket, 5000);
+        setInterval(createSparklers, 4000);
+        setInterval(createFireworkBurst, 7000);
+        setInterval(createFountainSpray, 6000);
+
+        // Initial burst of animations
+        setTimeout(() => {
+            createFirecracker();
+            createRocket();
+            createSparklers();
+            createFireworkBurst();
+            createFountainSpray();
+        }, 1000);
+
+        // Subtle elegant logo effect
+        const logo = document.querySelector('.logo');
+        
+        setInterval(() => {
+            const intensity = Math.random() * 5 + 3;
+            logo.style.textShadow = `0 0 ${intensity}px rgba(212, 175, 55, 0.5)`;
+        }, 2000);
+
+        // Removed lightning effects for sophisticated design
+
+        // Elegant card hover effects already handled in CSS
+
+
+
+        // WhatsApp button click tracking with effect
+        document.querySelectorAll('a[href*="wa.me"]').forEach(button => {
+            button.addEventListener('click', function() {
+                // Create a ripple effect
+                const ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = '50%';
+                ripple.style.top = '50%';
+                ripple.style.width = '20px';
+                ripple.style.height = '20px';
+                ripple.style.marginLeft = '-10px';
+                ripple.style.marginTop = '-10px';
+                
+                this.style.position = 'relative';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    if (ripple.parentNode) {
+                        ripple.parentNode.removeChild(ripple);
+                    }
+                }, 600);
+                
+                console.log('WhatsApp order button clicked');
+            });
+        });
+
+        // Add ripple animation
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes ripple {
+                to { transform: scale(4); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // Elegant loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 200);
+        });
+
+        // Enhanced parallax effect for multiple background layers
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const stars = document.querySelector('.stars');
+            const lightWaves = document.querySelector('.light-waves');
+            const crackersContainer = document.querySelector('.crackers-bg');
+            
+            if (stars) stars.style.transform = `translateY(${scrolled * 0.3}px)`;
+            if (lightWaves) lightWaves.style.transform = `translateY(${scrolled * 0.15}px)`;
+            if (crackersContainer) crackersContainer.style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+
+        // Add random sparkle effects
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.width = '2px';
+            sparkle.style.height = '2px';
+            sparkle.style.background = 'rgba(212, 175, 55, 0.9)';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.zIndex = '-1';
+            sparkle.style.animation = 'sparkle 2s ease-out forwards';
+            sparkle.style.boxShadow = '0 0 6px rgba(212, 175, 55, 0.8)';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (sparkle.parentNode) {
+                    sparkle.parentNode.removeChild(sparkle);
+                }
+            }, 2000);
+        }
+
+        // Add sparkle animation CSS
+        const sparkleStyle = document.createElement('style');
+        sparkleStyle.textContent += `
+            @keyframes sparkle {
+                0% { opacity: 0; transform: scale(0) rotate(0deg); }
+                50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                100% { opacity: 0; transform: scale(0) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(sparkleStyle);
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 3000);
+        
+        // Add mouse interaction sparkles
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.95) { // Only 5% chance on mouse move
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.width = '1px';
+                sparkle.style.height = '1px';
+                sparkle.style.background = 'rgba(243, 156, 18, 0.8)';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.zIndex = '-1';
+                sparkle.style.animation = 'sparkle 1s ease-out forwards';
+                sparkle.style.boxShadow = '0 0 4px rgba(243, 156, 18, 0.6)';
+                sparkle.style.pointerEvents = 'none';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 1000);
+            }
+        });
+
+        // Removed floating animations for clean mobile experience
+    </script>
+
+</body></html>
